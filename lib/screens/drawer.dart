@@ -71,6 +71,7 @@ final Widget drawerWidget = Drawer(
             color: Colors.white,
           ),
           onTap: () {
+
             //TODO:Navigate to that screen
             print('done');
           },

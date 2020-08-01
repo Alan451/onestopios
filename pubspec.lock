@@ -109,16 +109,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.12"
-<<<<<<< HEAD
-  intl:
-    dependency: transitive
-    description:
-      name: intl
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.16.1"
-=======
->>>>>>> 2ca1133753803f4a2916bd2a52c158c30a80db2e
   matcher:
     dependency: transitive
     description:
@@ -140,7 +130,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.6.4"
-<<<<<<< HEAD
   path_provider:
     dependency: transitive
     description:
@@ -176,8 +165,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.9.0"
-=======
->>>>>>> 2ca1133753803f4a2916bd2a52c158c30a80db2e
   petitparser:
     dependency: transitive
     description:
@@ -290,7 +277,4 @@ packages:
     version: "3.6.1"
 sdks:
   dart: ">=2.6.0 <3.0.0"
-<<<<<<< HEAD
   flutter: ">=1.17.0 <2.0.0"
-=======
->>>>>>> 2ca1133753803f4a2916bd2a52c158c30a80db2e

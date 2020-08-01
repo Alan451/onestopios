@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'screens/timings.dart';
 import 'screens/HomeScreen.dart';
+import 'screens/InternalBus.dart';
+import 'screens/Ferry.dart';
+import 'screens/IitgBus.dart';
 
 // this is the root of our application
 void main() async {
@@ -18,6 +20,9 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: HomeScreen.id,
         routes: {
+          IitgBus.id: (context) => IitgBus(),
+          Ferry.id: (context) => Ferry(),
+          InternalBus.id: (context) => InternalBus(),
           HomeScreen.id: (context) => HomeScreen(),
         });
   }
