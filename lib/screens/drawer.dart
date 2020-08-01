@@ -71,6 +71,7 @@ final Widget drawerWidget = Drawer(
             color: Colors.white,
           ),
           onTap: () {
+            https: //www.neonscience.org/git-setup-remote
             //TODO:Navigate to that screen
             print('done');
           },
