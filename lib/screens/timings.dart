@@ -11,6 +11,7 @@ class Timing extends StatelessWidget {
       child: Column(
         children: <Widget>[
           RaisedButton(
+
              onPressed: () {
               Navigator.pushNamed(context, IitgBus.id);
             },
@@ -28,7 +29,6 @@ class Timing extends StatelessWidget {
             },
             child: Text('Ferry'),
           ),
-          // FlatButton.icon(onPressed: null, icon: null, label: null),
         ],
       ),
     );
