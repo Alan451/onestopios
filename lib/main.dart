@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:onestop_ios/screens/timings.dart';
 import 'package:onestop_ios/screens/HomeScreen.dart';
+import 'package:onestop_ios/screens/InternalBus.dart';
 
-import 'screens/HomeScreen.dart';
-import 'screens/HomeScreen.dart';
+
 
 // this is the root of our application
 void main() async {
@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       routes: {
         Timing.id: (context) => Timing(),
         MyHomePage.id: (context) => MyHomePage(),
+        InternalBus.id:(context)=>InternalBus(),
       },
     );
   }
