@@ -31,7 +31,7 @@ class _FerryState extends State<Ferry> {
             children: <Widget>[
               Center(
                 child: Text(
-                  'Internal Bus',
+                  'Ferry',
                   textAlign: TextAlign.center,
                   textScaleFactor: 3.0,
                 ),

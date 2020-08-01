@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 //widget for the my profile page displaying user's details
 class IitgBus extends StatefulWidget {
-  static const id = "internal_bus";
+  static const id = "iitg_bus";
   @override
   _IitgBusState createState() => _IitgBusState();
 }
