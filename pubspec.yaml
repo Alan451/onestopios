@@ -25,11 +25,14 @@ dependencies:
   cupertino_icons: ^0.1.2
   google_fonts: ^1.1.0
   http: ^0.12.2
-  flutter_full_pdf_viewer: ^1.0.6
+  flutter_pdfview: ^1.0.3+2
+  path_provider: ^1.6.11
   firebase: ^7.3.0
   firebase_auth: ^0.16.1
   cloud_firestore: ^0.13.7
   firebase_storage: ^3.1.6
+  flutter_full_pdf_viewer: ^1.0.6
+  flutter_plugin_pdf_viewer: any
 
 dev_dependencies:
   flutter_test:
