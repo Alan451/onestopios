@@ -31,6 +31,7 @@ android {
     }
 
     defaultConfig {
+
         multiDexEnabled true
         applicationId "com.swc.onestop_ios"
         minSdkVersion 16
