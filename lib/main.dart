@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:onestop_ios/screens/IitgBus.dart';
-import 'package:onestop_ios/screens/InternalBus.dart';
 import 'screens/HomeScreen.dart';
 import 'screens/InternalBus.dart';
 import 'screens/Ferry.dart';

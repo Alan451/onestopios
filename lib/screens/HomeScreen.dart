@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'MessMenuViewer.dart';
 import 'drawer.dart';
 import 'timings.dart';
 
@@ -15,10 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Container(
       color: Colors.red,
     ),
-    //TODO:Mess Menu viewer widget
-    Container(
-      color: Colors.black54,
-    ),
+    MessMenuViewer(),
     //TODO:Timings Viewer Widget
     Timing(),
   ];
@@ -31,11 +29,15 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: headingOptions[selectedIndex],
-          backgroundColor: Color(0xff3F80FA),
+        appBar: PreferredSize(
+          preferredSize:
+              Size.fromHeight(MediaQuery.of(context).size.height * 0.10),
+          child: AppBar(
+            title: headingOptions[selectedIndex],
+            backgroundColor: Color(0xff3F80FA),
+          ),
         ),
-        drawer: drawerWidget,
+        drawer: DrawerWidget(),
         body: widgetOptions[selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
           items: [
