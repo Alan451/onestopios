@@ -19,7 +19,8 @@ class _FerryState extends State<Ferry> {
   String dropdownValue;
 
   Future<dynamic> getFerryTimings() async {
-    final _queryList = await Firestore.instance.collection("FerryTimings").getDocuments();
+    final _queryList =
+        await Firestore.instance.collection("FerryTimings").getDocuments();
     final _doc = _queryList.documents[0];
     return _doc.data;
   }
@@ -114,10 +115,11 @@ class _FerryState extends State<Ferry> {
                           ),
                           SizedBox(width: 20),
                           Text(
-                            "Guwahti -> Campus",
-                            style: Theme.of(context).textTheme.headline2.copyWith(
-                                  fontSize: 25,
-                                ),
+                            "Guwahati -> Campus",
+                            style:
+                                Theme.of(context).textTheme.headline2.copyWith(
+                                      fontSize: 25,
+                                    ),
                           ),
                         ],
                       ),
@@ -159,9 +161,10 @@ class _FerryState extends State<Ferry> {
                           SizedBox(width: 20),
                           Text(
                             "Campus -> Guwahtu",
-                            style: Theme.of(context).textTheme.headline2.copyWith(
-                                  fontSize: 25,
-                                ),
+                            style:
+                                Theme.of(context).textTheme.headline2.copyWith(
+                                      fontSize: 25,
+                                    ),
                           ),
                         ],
                       ),
