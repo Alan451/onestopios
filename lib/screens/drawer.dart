@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onestop_ios/screens/about.dart';
 
 final Widget drawerWidget = Drawer(
   child: Container(

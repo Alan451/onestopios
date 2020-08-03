@@ -3,6 +3,7 @@ import 'screens/HomeScreen.dart';
 import 'screens/InternalBus.dart';
 import 'screens/Ferry.dart';
 import 'screens/IitgBus.dart';
+import 'screens/about.dart';
 
 // this is the root of our application
 void main() async {
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
           Ferry.id: (context) => Ferry(),
           InternalBus.id: (context) => InternalBus(),
           HomeScreen.id: (context) => HomeScreen(),
+          AboutScreen.id: (context) => AboutScreen(),
         });
   }
 }
