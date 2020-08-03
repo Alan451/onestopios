@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'pdfViewer.dart';
+import 'package:flutter_plugin_pdf_viewer/flutter_plugin_pdf_viewer.dart';
 
 class MessMenuViewer extends StatefulWidget {
   @override
@@ -12,6 +12,7 @@ class _MessMenuViewerState extends State<MessMenuViewer> {
   Firestore _firestore = Firestore.instance;
   String pdfUrls;
   bool _isLoading = false;
+  PDFDocument _document;
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +98,12 @@ class _MessMenuViewerState extends State<MessMenuViewer> {
 
                         setState(() {
                           pdfUrls = snapshot[value];
+
                           _isLoading = false;
+                        });
+                        var document = await PDFDocument.fromURL(pdfUrls);
+                        setState(() {
+                          _document = document;
                         });
                       },
                     ),
@@ -109,9 +115,7 @@ class _MessMenuViewerState extends State<MessMenuViewer> {
           ? Container(
               color: Colors.white,
             )
-          : PdfViewerPage(
-              url: pdfUrls,
-            ),
+          : PDFViewer(document: _document),
     );
   }
 }
