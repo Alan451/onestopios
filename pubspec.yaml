@@ -32,6 +32,8 @@ dependencies:
   cloud_firestore: ^0.13.7
   firebase_storage: ^3.1.6
   flutter_plugin_pdf_viewer: any
+  fluttertoast: ^7.0.2
+  file_picker: ^1.13.2
 
 
 dev_dependencies:
