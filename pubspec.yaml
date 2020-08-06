@@ -25,7 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   google_fonts: ^1.1.0
   http: ^0.12.2
-  flutter_full_pdf_viewer: ^1.0.6
+  flutter_plugin_pdf_viewer: ^1.0.6
   firebase: ^7.3.0
   firebase_auth: ^0.16.1
   cloud_firestore: ^0.13.7
@@ -33,6 +33,7 @@ dependencies:
   url_launcher: ^5.5.0
   shared_preferences: ^0.5.8
   toast: ^0.1.5
+  expandable: ^4.1.4
 
 dev_dependencies:
   flutter_test:

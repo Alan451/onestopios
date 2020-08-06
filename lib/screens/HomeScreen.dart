@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: Color(0xff3F80FA),
           elevation: 0,
         ),
-        drawer: drawerWidget,
+        drawer: DrawerWidget(),
         body: widgetOptions[selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
           items: [
