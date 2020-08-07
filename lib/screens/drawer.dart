@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:onestop_ios/screens/about.dart';
 import 'package:onestop_ios/screens/internet_settings.dart';
+import 'package:onestop_ios/screens/quePaper.dart';
 
 class DrawerWidget extends StatelessWidget {
   @override
@@ -118,6 +119,9 @@ class DrawerWidget extends StatelessWidget {
                 color: Colors.white,
               ),
               onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context)=> quePaper(),
+                ),);
                 //TODO:Navigate to that screen
                 print('done');
               },
