@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:onestop_ios/screens/about.dart';
+import 'package:onestop_ios/screens/internet_settings.dart';
 import 'package:onestop_ios/screens/quePaper.dart';
 
 class DrawerWidget extends StatelessWidget {
@@ -106,7 +108,7 @@ class DrawerWidget extends StatelessWidget {
                 color: Colors.white,
               ),
               onTap: () {
-                //TODO:Navigate to that screen
+                Navigator.pushNamed(context, InternetSettings.id);
                 print('done');
               },
             ),
@@ -143,6 +145,7 @@ class DrawerWidget extends StatelessWidget {
               ),
               onTap: () {
                 //TODO:Navigate to that screen
+                Navigator.pushNamed(context, AboutScreen.id);
                 print('done');
               },
             ),
