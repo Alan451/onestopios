@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:onestop_ios/screens/LoginPage.dart';
 import 'package:onestop_ios/screens/about.dart';
 import 'package:onestop_ios/screens/internet_settings.dart';
 import 'package:onestop_ios/screens/quePaper.dart';
+import 'package:aad_oauth/aad_oauth.dart';
 
 class DrawerWidget extends StatelessWidget {
+  final AadOAuth oauth = AadOAuth(LoginPage.config);
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -119,9 +122,12 @@ class DrawerWidget extends StatelessWidget {
                 color: Colors.white,
               ),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context)=> quePaper(),
-                ),);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => quePaper(),
+                  ),
+                );
                 //TODO:Navigate to that screen
                 print('done');
               },
@@ -155,7 +161,9 @@ class DrawerWidget extends StatelessWidget {
                 Icons.access_alarm,
                 color: Colors.white,
               ),
-              onTap: () {
+              onTap: () async {
+                await oauth.logout();
+                Navigator.popAndPushNamed(context, LoginPage.id);
                 //TODO:Navigate to that screen
                 print('done');
               },

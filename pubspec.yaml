@@ -35,6 +35,8 @@ dependencies:
   flutter_plugin_pdf_viewer: any
   fluttertoast: ^7.0.2
   file_picker: ^1.13.2
+  aad_oauth: ^0.1.9
+  shared_preferences: ^0.5.8
 
 
 dev_dependencies:
