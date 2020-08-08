@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:onestop_ios/screens/IPCalculator.dart';
 import 'screens/HomeScreen.dart';
 import 'screens/InternalBus.dart';
 import 'screens/Ferry.dart';
 import 'screens/IitgBus.dart';
+import 'screens/LoginPage.dart';
+import 'screens/about.dart';
+import 'screens/internet_settings.dart';
 
 // this is the root of our application
 void main() async {
@@ -18,12 +22,16 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        initialRoute: HomeScreen.id,
+        initialRoute: LoginPage.id,
         routes: {
+          LoginPage.id: (context) => LoginPage(),
           IitgBus.id: (context) => IitgBus(),
           Ferry.id: (context) => Ferry(),
           InternalBus.id: (context) => InternalBus(),
           HomeScreen.id: (context) => HomeScreen(),
+          AboutScreen.id: (context) => AboutScreen(),
+          InternetSettings.id: (context) => InternetSettings(),
+          IPCalculator.id: (context) => IPCalculator(),
         });
   }
 }

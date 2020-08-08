@@ -31,10 +31,10 @@ android {
     }
 
     defaultConfig {
-
+        manifestPlaceholders = ['appAuthRedirectScheme': 'com.swc.onestopios']
         multiDexEnabled true
         applicationId "com.swc.onestop_ios"
-        minSdkVersion 16
+        minSdkVersion 18
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
