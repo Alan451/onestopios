@@ -34,6 +34,7 @@ dependencies:
   flutter_plugin_pdf_viewer: any
   fluttertoast: ^7.0.2
   file_picker: ^1.13.2
+  firebase_database: ^3.1.6
 
 
 dev_dependencies:
