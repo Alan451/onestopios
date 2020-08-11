@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'MessMenuViewer.dart';
+import 'package:onestop_ios/screens/FeedViewer.dart';
 import 'drawer.dart';
 import 'timings.dart';
 
@@ -13,10 +13,11 @@ class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
   List<Widget> widgetOptions = [
     //TODO:Feed widget
+    FeedViewer(),
+    //TODO:Mess Menu viewer widget
     Container(
-      color: Colors.red,
+      color: Colors.black54,
     ),
-    MessMenuViewer(),
     //TODO:Timings Viewer Widget
     Timing(),
   ];
@@ -29,13 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize:
-              Size.fromHeight(MediaQuery.of(context).size.height * 0.10),
-          child: AppBar(
-            title: headingOptions[selectedIndex],
-            backgroundColor: Color(0xff3F80FA),
-          ),
+        appBar: AppBar(
+          title: headingOptions[selectedIndex],
+          backgroundColor: Color(0xff3F80FA),
+          elevation: 0,
         ),
         drawer: DrawerWidget(),
         body: widgetOptions[selectedIndex],
@@ -65,3 +63,4 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
