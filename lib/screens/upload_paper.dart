@@ -1,9 +1,12 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:onestop_ios/firebasefunctions.dart';
 import 'dart:io';
 import 'package:path/path.dart';
+
+import '../paper_def.dart';
 
 class uploadPaper extends StatefulWidget{
   @override
@@ -22,13 +25,13 @@ class _uploadPaperState extends State<uploadPaper>
   final Controller1 = TextEditingController();
   final Controller2 = TextEditingController();
   final Controller3 = TextEditingController();
-  final Controller4 = TextEditingController();
+
   @override
   void dispose(){
     Controller1.dispose();
     Controller2.dispose();
     Controller3.dispose();
-    Controller4.dispose();
+
     super.dispose();
   }
 
@@ -102,8 +105,12 @@ class _uploadPaperState extends State<uploadPaper>
 
                   child: FlatButton(onPressed: () async {
                     file=await pick_file();
-                    filename= basename(file.path);
-                    Controller4.text=filename;
+                    setState(() {
+                      filename= basename(file.path);
+                    });
+
+
+
 
                     }, child: Text('Browse',style: new TextStyle(fontSize: 20),), color: Colors.amber, textColor: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -125,9 +132,11 @@ class _uploadPaperState extends State<uploadPaper>
 
               child: FlatButton(onPressed: (){
 
+
                 course=Controller1.text;
                 year=Controller3.text;
                 professor=Controller2.text;
+
 
                 if(course=='')
                 {
@@ -155,7 +164,8 @@ class _uploadPaperState extends State<uploadPaper>
                 }
                 else
                 {
-                 add_paper(context,file);
+                 add_paper(context,file,course.toUpperCase(),dropdownValue,year,professor);
+
                   print('done');
                 }
 

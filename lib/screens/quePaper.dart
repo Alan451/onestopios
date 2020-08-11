@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:onestop_ios/screens/upload_paper.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:onestop_ios/screens/view_paper.dart';
+
+
+import '../paper_def.dart';
 
 class quePaper extends StatefulWidget{
   @override
@@ -79,7 +84,7 @@ class _quePaperState extends State<quePaper>
                  width: 220,
                  height: 50,
 
-                 child: FlatButton(onPressed: (){
+                 child: FlatButton(onPressed: () async {
 
                    course=Controller1.text;
                    year=Controller2.text;
@@ -95,12 +100,45 @@ class _quePaperState extends State<quePaper>
                      }
                    else
                      {
-                       //TODO add the screen
-                       print('done');
+
+                       String Year=year;
+                       String CourseCode=course.toUpperCase();
+                       String Type=dropdownValue;
+                       List<paper> list=new List();
+                       if(Year!="")
+                       {DatabaseReference ref=await FirebaseDatabase.instance.reference().child('Uploads/'+CourseCode+'_'+Type+'/'+Year);
+                       await ref.once().then((DataSnapshot snapshot)
+                       {
+                         Map<dynamic,dynamic> map=snapshot.value;
+                         map.forEach((key, value) {
+                           // print(value);
+                           list.add(new paper.fromSnapshot(value));
+
+                         });
+
+                       });}
+
+                       else
+                       {
+                         DatabaseReference ref=await FirebaseDatabase.instance.reference().child('Uploads/'+CourseCode+'_'+Type);
+                         await ref.once().then((DataSnapshot snapshot)
+                         {
+                           Map<dynamic,dynamic> map=snapshot.value;
+                           map.forEach((key, value) {
+                             Map<dynamic,dynamic> map1=value;
+                             map1.forEach((key, value1) {
+                               list.add(paper.fromSnapshot(value1));
+                             });
+                           });
+                         });
+                       }
+                       Navigator.push(context, MaterialPageRoute(
+                         builder: (context)=> view_paper(list: list),
+                       ),);
+
                      }
 
-                   print(course);
-                   print(year);
+
 
 
                  }, child: Text('FIND PAPER',style: new TextStyle(fontSize: 20),), color: Colors.amber, textColor: Colors.white,
