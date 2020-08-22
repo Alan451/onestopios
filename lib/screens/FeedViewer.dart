@@ -387,11 +387,14 @@ class _FeedViewer extends State<FeedViewer> with TickerProviderStateMixin{
                                     )
                                 ),
                                 onTap: (){
-                                  setState(() {
-                                    animationController.forward();
-                                    index = 0;
-                                    controller.jumpToPage(0);
-                                  });
+                                  if(index!=0)
+                                    {
+                                      setState(() {
+                                        animationController.forward();
+                                        index = 0;
+                                        controller.jumpToPage(0);
+                                      });
+                                    }
                                 },
                               ),
                             ),
@@ -412,12 +415,15 @@ class _FeedViewer extends State<FeedViewer> with TickerProviderStateMixin{
                                     )
                                 ),
                                 onTap: (){
-                                  setState(() {
-                                    animationController.forward();
-                                    index = 1;
-                                    controller.jumpToPage(1);
-                                    // loadSharedPref();
-                                  });
+                                  if(index!=1)
+                                    {
+                                      setState(() {
+                                        animationController.forward();
+                                        index = 1;
+                                        controller.jumpToPage(1);
+                                        // loadSharedPref();
+                                      });
+                                    }
                                 },
                               ),
                             ),
@@ -462,16 +468,21 @@ class _FeedViewer extends State<FeedViewer> with TickerProviderStateMixin{
     try{
       final prefs = await SharedPreferences.getInstance();
       a.clear();
-      Set<String> set = prefs.getKeys();
+      Set<String> set;
+      set = prefs.getKeys();
       for(String value in set)
       {
-        SavedFeed s = SavedFeed.fromJson(await sharedPreferences.read(value));
-        if(!a.contains(s))
-        a.add(s);
+        if(value!='freshInstall')
+          {
+            print(SavedFeed.fromJson(await sharedPreferences.read(value)).runtimeType);
+            SavedFeed s = SavedFeed.fromJson(await sharedPreferences.read(value));
+            if(!a.contains(s))
+              a.add(s);
+          }
       }
 
     } catch (e){
-
+        print(e);
     }
   }
 }
