@@ -109,12 +109,13 @@ class _quePaperState extends State<quePaper>
                        {DatabaseReference ref=await FirebaseDatabase.instance.reference().child('Uploads/'+CourseCode+'_'+Type+'/'+Year);
                        await ref.once().then((DataSnapshot snapshot)
                        {
-                         Map<dynamic,dynamic> map=snapshot.value;
+                         if(snapshot.value!=null)
+                           {Map<dynamic,dynamic> map=snapshot.value;
                          map.forEach((key, value) {
                            // print(value);
                            list.add(new paper.fromSnapshot(value));
 
-                         });
+                         });}
 
                        });}
 
@@ -123,13 +124,14 @@ class _quePaperState extends State<quePaper>
                          DatabaseReference ref=await FirebaseDatabase.instance.reference().child('Uploads/'+CourseCode+'_'+Type);
                          await ref.once().then((DataSnapshot snapshot)
                          {
-                           Map<dynamic,dynamic> map=snapshot.value;
+                           if(snapshot.value!=null)
+                           {Map<dynamic,dynamic> map=snapshot.value;
                            map.forEach((key, value) {
                              Map<dynamic,dynamic> map1=value;
                              map1.forEach((key, value1) {
                                list.add(paper.fromSnapshot(value1));
                              });
-                           });
+                           });}
                          });
                        }
                        Navigator.push(context, MaterialPageRoute(

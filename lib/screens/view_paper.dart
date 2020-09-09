@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import '../paper_def.dart';
-import 'package:firebase_database/firebase_database.dart';
+
+
+
 
 class view_paper extends StatefulWidget{
   final List<paper> list;
@@ -11,7 +13,7 @@ class view_paper extends StatefulWidget{
   @override
   view_paperState createState() => new view_paperState(list: list);
 }
-List<paper> list=new List();
+//List<paper> list=new List();
 
 
 
@@ -49,7 +51,15 @@ class view_paperState extends State<view_paper>{
                 width: 200,
                 height: 30,
 
-                child: FlatButton(onPressed: () {
+                child: FlatButton(onPressed: ()  async {
+                  String url= list[index].FileUrl;
+
+                  if (await canLaunch(url)) {
+                    await launch(url);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+
                   }, child: Text('DOWNLOAD',style: new TextStyle(fontSize: 20),), color: Colors.amber, textColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(25.0),

@@ -8,6 +8,10 @@ import 'package:file_picker/file_picker.dart';
 import 'package:onestop_ios/paper_def.dart';
 import 'package:path/path.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:http/http.dart' as http;
+import 'package:uuid/uuid.dart';
+
+String kTestString="test";
 
 void add_paper(BuildContext context,File file,String course,String type,String year,String professor)
 async{
@@ -50,4 +54,3 @@ Future<bool> savePdf(File file, String name,String course,String type,String pro
   if(downloadUrl!=null) return true;
   return false;
 }
-
